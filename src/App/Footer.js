@@ -1,10 +1,9 @@
 import React from 'react'
 
-function Header() {
+function Footer() {
   return (
     <div
-      
-      className="header h-screen bg-no-repeat bg-cover bg-center"
+      className="header h-screen bg-no-repeat bg-cover bg-center relative"
       style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/headerbg.png'})`}}
     >
       <div className='w-3/5 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 '>
@@ -16,4 +15,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Footer

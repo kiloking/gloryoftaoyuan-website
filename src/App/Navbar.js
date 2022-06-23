@@ -8,8 +8,8 @@ function Navbar({data}) {
   }
   return (
     <div className='flex flex-wrap items-center justify-between w-full xs:py-4 px-4
-    py-1 text-white
-    bg-[#40210F]'>
+    py-1 text-white fixed z-50
+    bg-[#40210fe5]'>
       <img src={process.env.PUBLIC_URL+'images/logo.png'} alt="" className='h-10 xs:h-7'/>
       <svg
         xmlns="http://www.w3.org/2000/svg"

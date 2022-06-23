@@ -21,6 +21,9 @@ module.exports = {
       'sm': {'max': '639px'},
       // => @media (max-width: 639px) { ... }
       'xs': {'max': '475px'}
+    },
+    fontFamily: {
+      'body': ['"Microsoft JhengHei"']
     }
   },
   plugins: [],
