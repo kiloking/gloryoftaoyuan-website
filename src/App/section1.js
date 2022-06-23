@@ -34,7 +34,7 @@ function Section1() {
         </div>
       </div>
       
-      <div className='border border-indigo-600 relative'>
+      <div className='border-t-2 border-white relative'>
         <div className='w-10/12 mx-auto'>
           <div className='w-full'>
             <img src={process.env.PUBLIC_URL+'/images/section1_person2.png'} alt="" />
@@ -58,7 +58,7 @@ function Section1() {
           </div>
         </div>
       </div>
-      <div className='border border-indigo-600 relative'>
+      <div className='border-t-2 border-white relative'>
         <div className='w-10/12 mx-auto'>
           <div className='w-full '>
             <img src={process.env.PUBLIC_URL+'/images/section1_person3.png'} alt="" className='ml-auto' />
