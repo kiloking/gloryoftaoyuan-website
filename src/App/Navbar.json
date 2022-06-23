@@ -1,0 +1,29 @@
+{
+  "navbar":[
+    {
+      "id":1,
+      "name":"建築心",
+      "type":"section1"
+    },
+    {
+      "id":2,
+      "name":"朗闊境",
+      "type":"section2"
+    },
+    {
+      "id":3,
+      "name":"生活趣",
+      "type":"section3"
+    },
+    {
+      "id":4,
+      "name":"墨香濃",
+      "type":"section4"
+    },
+    {
+      "id":5,
+      "name":"亦閒情",
+      "type":"section5"
+    }
+  ]
+}
