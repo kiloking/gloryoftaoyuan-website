@@ -2,7 +2,7 @@ import React from 'react'
 
 function Section2() {
   return (
-    <div id="section2" 
+    <div id="section2" name="link2"
     className="header h-screen bg-no-repeat bg-cover bg-center relative"
     style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2_bg.png'})`}}
     >

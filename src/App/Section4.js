@@ -9,7 +9,7 @@ function Section4({bgimg}) {
     slidesToScroll: 1
   };
   return (
-    <div id="section4" className="header h-screen bg-no-repeat bg-cover bg-center relative"
+    <div id="section4" name="link3"  className="header h-screen bg-no-repeat bg-cover bg-center relative"
     style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/' + bgimg})`}} >
       <div className='z-10 w-9/12 absolute inset-0 m-auto top-1/2 -translate-y-1/2'>
         <div className='flex  text-white '>

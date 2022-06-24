@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div
-      className="header h-screen bg-no-repeat bg-cover bg-center relative"
+      className="header h-screen bg-no-repeat bg-cover bg-center relative" name="footer"
       style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/headerbg.png'})`}}
     >
       <div className='w-3/5 absolute top-28 left-2/4 -translate-x-2/4  '>

@@ -3,27 +3,27 @@
     {
       "id":1,
       "name":"建築心",
-      "type":"section1"
+      "type":"link1"
     },
     {
       "id":2,
       "name":"朗闊境",
-      "type":"section2"
+      "type":"link2"
     },
     {
       "id":3,
       "name":"生活趣",
-      "type":"section3"
+      "type":"link3"
     },
     {
       "id":4,
       "name":"墨香濃",
-      "type":"section4"
+      "type":"link4"
     },
     {
       "id":5,
       "name":"亦閒情",
-      "type":"section5"
+      "type":"link5"
     }
   ]
 }

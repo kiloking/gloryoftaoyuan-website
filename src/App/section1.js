@@ -1,8 +1,11 @@
 import React from 'react'
-
+import { useRecoilState } from 'recoil';
+import { modalState, imageState } from './atom/atom';
 function Section1() {
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [currentMovie, setCurrentMovie] = useRecoilState(imageState);
   return (
-    <div id="section1" className='w-full  bg-[#40210F] '>
+    <div id="section1" className='w-full  bg-[#40210F]' name="link1">
       <div className='flex justify-center items-center h-screen relative'>
         <div 
           className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0'
@@ -18,17 +21,17 @@ function Section1() {
             </div>
           </div>
           <div className='flex mt-5'>
-            <div className='h-full mr-2'>
+            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work01.png'} alt="" /></div>
-            <div className='h-full mr-2'>
+            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work02.png'} alt="" /></div>
-            <div className='h-full mr-2'>
+            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work03.png'} alt="" /></div>
-            <div className='h-full mr-2'>
+            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work04.png'} alt="" /></div>
-            <div className='h-full mr-2'>
+            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work05.png'} alt="" /></div>
-            <div className='h-full mr-0'>
+            <div className='h-full mr-0' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work06.png'} alt="" /></div>
           </div>
         </div>
@@ -48,11 +51,16 @@ function Section1() {
             </div>
             <div className='w-3/5'>
               <div className='flex flex-wrap'>
-                <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person2_work/work01.png'} alt="" className=' h-[173px]'/></div>
-                <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person2_work/work02.png'} alt="" /></div>
-                <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person2_work/work03.png'} alt="" /></div>
-                <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person2_work/work04.png'} alt="" /></div>
-                <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person2_work/work05.png'} alt="" /></div>
+                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work01.png'} alt="" className=' h-[173px]'/></div>
+                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work02.png'} alt="" /></div>
+                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work03.png'} alt="" /></div>
+                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work04.png'} alt="" /></div>
+                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work05.png'} alt="" /></div>
               </div>
             </div>
           </div>
@@ -72,12 +80,18 @@ function Section1() {
               </div>
               <div className='w-3/5 orer-1'>
                 <div className='flex flex-wrap'>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work01.png'} alt="" className=' h-[173px]'/></div>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work02.png'} alt="" /></div>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work03.png'} alt="" /></div>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work04.png'} alt="" /></div>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work05.png'} alt="" /></div>
-                  <div className='m-1 '><img src={process.env.PUBLIC_URL+ '/images/person3_work/work06.png'} alt="" /></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work01.png'} alt="" className=' h-[173px]'/></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work02.png'} alt="" /></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work03.png'} alt="" /></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work04.png'} alt="" /></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work05.png'} alt="" /></div>
+                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work06.png'} alt="" /></div>
                 </div>
               </div>
             </div>
