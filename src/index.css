@@ -1,14 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.slick-dots {
+  bottom:17px;
+}
+.slick-dots li button {
+  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8); */
+  text-shadow: 1px 1px 5px black;
+}
 .slick-dots li button:before{
   color:White !important;
+  
 }
 .slick-dots li.slick-active button:before {
   color:White !important;
 }
+.slick-track
+{
+    display: flex !important;
+}
 
+.slick-slide
+{
+  height: auto;
+}
 ul.navbar li a.active{
   color:rgba(202, 138, 4, 0.9);
 }

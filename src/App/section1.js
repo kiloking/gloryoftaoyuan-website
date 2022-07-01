@@ -2,9 +2,21 @@ import React from 'react'
 import { useRecoilState } from 'recoil';
 import { modalState, imageState } from './atom/atom';
 import Slider from "react-slick";
+import { data } from 'autoprefixer';
 function Section1() {
   const [showModal, setShowModal] = useRecoilState(modalState);
   const [currentMovie, setCurrentMovie] = useRecoilState(imageState);
+  const data1 = ['work01.jpg','work02.jpg','work03.jpg','work04.jpg']
+  const data2 = ['work05.jpg','work06.jpg','work07.jpg','work08.jpg','work09.jpg']
+  const data3 = ['work10.jpg','work11.jpg','work12.jpg','work13.jpg','work14.jpg']
+  const settings = {
+    dots: true,
+    arrows:0,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   return (
     <div id="section1" className='w-full  bg-[#40210F]' name="link1">
       <div className='flex justify-center items-center h-screen relative overflow-hidden'>
@@ -26,28 +38,40 @@ function Section1() {
             </div>
           </div>
           <div className='flex mt-5 xs:hidden'>
-            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-2'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work01.png'} alt="" /></div>
-            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-2'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work02.png'} alt="" /></div>
-            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-2'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work03.png'} alt="" /></div>
-            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-2'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work04.png'} alt="" /></div>
-            <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-2'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work05.png'} alt="" /></div>
-            <div className='h-full mr-0' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
+            <div className='h-full mr-0'  >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work06.png'} alt="" /></div>
+          </div>
+          <div className='p-4 hidden xs:block'>
+            <Slider {...settings} >
+              {
+                data1.map((item,index)=>{
+                  return(
+                    <div className=' box-border pt-[56%] relative'
+                      
+                    >
+                      <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'
+                          style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/person1_work/slide_images/'+item})`}}
+                        ></div>
+                    </div>
+                  )
+                })
+              }
+            </Slider>
           </div>
         </div>
       </div>
       
-      <div className='border-t-2 border-white relative  xs:h-screen overflow-hidden'>
-        {/* <div className='w-10/12 mx-auto'>
-          <div className='w-full'>
-            <img src={process.env.PUBLIC_URL+'/images/section1_person2.png'} alt="" />
-          </div>
-        </div> */}
+      <div className='border-t-2 border-white relative  xs:h-screen overflow-hidden h-[30vw]'>
         <div 
           className='absolute h-full left-[10%] aspect-square bg-no-repeat bg-cover bg-right-top top-0 xs:hidden '
           style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section1_person2.png'})`}}>
@@ -56,61 +80,86 @@ function Section1() {
           className='absolute pt-[0%] bg-no-repeat bg-cover bg-center-top inset-0 hidden xs:block'
           style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/mobile_section1-2_bg.png'})`}}>
         </div>
-        <div className='z-10 w-9/12 relative inset-0 mx-auto py-20'>
-          <div className='flex items-end '>
-            <div className='w-2/5 ml-7  pr-24'>
+        <div className='z-10 w-9/12 relative  mx-auto  py-20 px-0 xs:w-full xs:pt-[50%]'>
+          <div className='flex items-end xs:flex-col'>
+            <div className='w-2/5 ml-7  pr-24 xs:w-full xs:p-12 xs:ml-0'>
               <img src={process.env.PUBLIC_URL+'/images/section1_person2_title.png'} className="mb-8" alt="" />
-              <div className='text-white text-base font-bold mb-5'>房子要賣得掉才有用，設計一個案子，不僅要注重美感，貼近市場與需求更是一大重點；由市場觀點來設計，以實用性為考量，才能達成最符合市場需求的產品內容。</div>
+              <div className='text-white text-base mb-2'>房子要賣得掉才有用，設計一個案子，不僅要注重美感，貼近市場與需求更是一大重點；由市場觀點來設計，以實用性為考量，才能達成最符合市場需求的產品內容。</div>
             </div>
-            <div className='w-3/5'>
+            <div className='w-3/5 xs:hidden'>
               <div className='flex flex-wrap'>
-                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work01.png'} alt="" className=' h-[173px]'/></div>
-                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work02.png'} alt="" /></div>
-                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work03.png'} alt="" /></div>
-                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work04.png'} alt="" /></div>
-                <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                  <img src={process.env.PUBLIC_URL+ '/images/person2_work/work05.png'} alt="" /></div>
+                <div className='m-1' >
+                  <img src={process.env.PUBLIC_URL+ '/images/person2_works.png'} alt="" /></div>
+              
               </div>
+            </div>
+            <div className='p-4 hidden xs:block w-full'>
+              <Slider {...settings} >
+                {
+                  data2.map((item,index)=>{
+                    return(
+                      <div className=' box-border pt-[56%] relative'
+                        
+                      >
+                        <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'
+                            style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/person2_work/slide_images/'+item})`}}
+                          ></div>
+                        {/* <img src={process.env.PUBLIC_URL+'/images/person1_work/slide_images/'+item} alt="" className='block' />_ */}
+                      </div>
+                    )
+                  })
+                }
+              </Slider>
             </div>
           </div>
         </div>
       </div>
-      <div className='border-t-2 border-white relative'>
-        <div className='w-10/12 mx-auto'>
-          <div className='w-full '>
-            <img src={process.env.PUBLIC_URL+'/images/section1_person3.png'} alt="" className='ml-auto' />
+      
+      <div className='border-t-2 border-white relative  xs:h-screen overflow-hidden h-[30vw]'>
+          <div 
+            className='absolute h-full right-[10%] aspect-square bg-no-repeat bg-cover bg-right-top top-0 xs:hidden '
+            style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section1_person3.png'})`}}>
+          </div>
+          <div 
+            className='absolute pt-[0%] bg-no-repeat bg-cover bg-center-top inset-0 hidden xs:block'
+            style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/mobile_section1-3_bg.png'})`}}>
           </div>
 
-          <div className='z-10 w-9/12 absolute inset-0 m-auto top-1/2 -translate-y-1/2 right-20'>
-            <div className='flex items-end'>
-              <div className='w-2/5 mr-7  order-2'>
+          <div className='z-10 w-9/12  relative  mx-auto py-20 px-0 xs:w-full xs:pt-[50%]'>
+            <div className='flex items-end xs:flex-col'>
+              <div className='w-2/5 mr-7  order-2 pl-24  xs:w-full xs:p-12 xs:mr-0'>
                 <img src={process.env.PUBLIC_URL+'/images/section1_person3_title.png'} className="mb-8" alt="" />
-                <div className='text-white text-base font-bold mb-5'>好的建築，是所有完美的結合。因此我們嚴謹計算，從地質調查、結構概述、耐震系統、結構強度，集結很多好的結構安全融入，注重安全與舒適，打造一座經的起時間考驗的房子！</div>
+                <div className='text-white text-base mb-2'>好的建築，是所有完美的結合。因此我們嚴謹計算，從地質調查、結構概述、耐震系統、結構強度，集結很多好的結構安全融入，注重安全與舒適，打造一座經的起時間考驗的房子！</div>
               </div>
-              <div className='w-3/5 orer-1'>
+              <div className='w-3/5 orer-1 xs:hidden'>
                 <div className='flex flex-wrap'>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work01.png'} alt="" className=' h-[173px]'/></div>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work02.png'} alt="" /></div>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work03.png'} alt="" /></div>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work04.png'} alt="" /></div>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work05.png'} alt="" /></div>
-                  <div className='m-1' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}}>
-                    <img src={process.env.PUBLIC_URL+ '/images/person3_work/work06.png'} alt="" /></div>
+                  <div className='m-1' >
+                    <img src={process.env.PUBLIC_URL+ '/images/person3_works.png'} alt="" /></div>
+
                 </div>
+              </div>
+              <div className='p-4 hidden xs:block w-full xs:order-2'>
+                <Slider {...settings} >
+                  {
+                    data3.map((item,index)=>{
+                      return(
+                        <div className=' box-border pt-[56%] relative'
+                          
+                        >
+                          <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'
+                              style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/person3_work/slide_images/'+item})`}}
+                            ></div>
+                          {/* <img src={process.env.PUBLIC_URL+'/images/person1_work/slide_images/'+item} alt="" className='block' />_ */}
+                        </div>
+                      )
+                    })
+                  }
+                </Slider>
               </div>
             </div>
           </div>
 
-        </div>
+      
       </div>
     </div>
   )
