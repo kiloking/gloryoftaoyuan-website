@@ -13,6 +13,7 @@ import Section7 from './Section7';
 import Footer from './Footer';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { modalState, imageState } from './atom/atom';
+import { Link,  animateScroll as scroll } from 'react-scroll'
 //data
 import NavbarData from './Navbar.json'
 
@@ -43,7 +44,24 @@ function App() {
   return (
 
       <div className="App">
-      
+          <div className='  fixed bottom-0 left-0  hidden xs:block w-full z-40'>
+            <div className='flex text-white justify-between '>
+              <a href="tel:0000000" className='flex flex-col items-center p-5 bg-[#42210bd0] mr-2 flex-1'>
+                <img src={process.env.PUBLIC_URL+'/images/phone.png'} alt="" />
+                <div>立即來電</div>
+              </a>
+              <Link activeClass="active" to='footer' spy={true} smooth={true} duration={600}
+                className='flex flex-col items-center p-5 bg-[#42210bd0] mr-2 flex-1'>
+                <img src={process.env.PUBLIC_URL+'/images/pen.png'} alt="" />
+                <div>立即預約</div>
+              </Link>
+              <a href="https://www.facebook.com/" target="_blank" className='flex flex-col items-center p-5 bg-[#42210bd0] flex-1' rel="noreferrer">
+                <img src={process.env.PUBLIC_URL+'/images/fb.png'} alt="" />
+                <div>粉絲專頁</div>
+              </a>
+              
+            </div>
+          </div>
           <Navbar data={navbar}/>
           <Header />
           <VideoSection />
