@@ -1,26 +1,31 @@
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import { modalState, imageState } from './atom/atom';
+import Slider from "react-slick";
 function Section1() {
   const [showModal, setShowModal] = useRecoilState(modalState);
   const [currentMovie, setCurrentMovie] = useRecoilState(imageState);
   return (
     <div id="section1" className='w-full  bg-[#40210F]' name="link1">
-      <div className='flex justify-center items-center h-screen relative'>
+      <div className='flex justify-center items-center h-screen relative overflow-hidden'>
         <div 
-          className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0'
+          className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0 xs:hidden'
           style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section1_bg.png'})`}}>
         </div>
-        <div className='z-10 w-3/4 '>
-          <div className='flex items-end'>
-            <img src={process.env.PUBLIC_URL+'/images/section1_person1.png'} alt="" />
-            <div className='ml-12 pr-32'>
+        <div 
+          className='absolute pt-[0%] bg-no-repeat bg-cover bg-center-top inset-0 hidden xs:block'
+          style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/mobile_section1-1_bg.png'})`}}>
+        </div>
+        <div className='z-10 w-3/4 xs:w-full'>
+          <div className='flex items-end '>
+            <img src={process.env.PUBLIC_URL+'/images/section1_person1.png'} alt="" className='xs:hidden' />
+            <div className='ml-12 pr-32 xs:pr-0 xs:mr-12'>
               <img src={process.env.PUBLIC_URL+'/images/section1_person1_title.png'} className="mb-8" alt="" />
               <img src={process.env.PUBLIC_URL+'/images/section1_person1_subtitle.png'} className="my-8" alt="" />
               <div className='text-white text-base font-bold mb-5'>百虹建設於1994年設立以來，一路秉持王文堂董事長「以心出發」的信念，如同春耕秋收的農夫，辛勤建設、敬天惜物，以品質為最初心見證，只把最好的呈現給客戶，深耕市場近30年來，在一次次的口碑考驗中獲得成果，期盼持續打造一座座承載住戶幸福的經典建築。</div>
             </div>
           </div>
-          <div className='flex mt-5'>
+          <div className='flex mt-5 xs:hidden'>
             <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
               <img src={process.env.PUBLIC_URL+'/images/person1_work/work01.png'} alt="" /></div>
             <div className='h-full mr-2' onClick={() => { setShowModal(true); setCurrentMovie({ src: '/person1_work/work01.png', caption: 'Image'});}} >
@@ -37,15 +42,23 @@ function Section1() {
         </div>
       </div>
       
-      <div className='border-t-2 border-white relative'>
-        <div className='w-10/12 mx-auto'>
+      <div className='border-t-2 border-white relative  xs:h-screen overflow-hidden'>
+        {/* <div className='w-10/12 mx-auto'>
           <div className='w-full'>
             <img src={process.env.PUBLIC_URL+'/images/section1_person2.png'} alt="" />
           </div>
+        </div> */}
+        <div 
+          className='absolute h-full left-[10%] aspect-square bg-no-repeat bg-cover bg-right-top top-0 xs:hidden '
+          style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section1_person2.png'})`}}>
         </div>
-        <div className='z-10 w-9/12 absolute inset-0 m-auto top-1/2 -translate-y-1/2 left-20'>
+        <div 
+          className='absolute pt-[0%] bg-no-repeat bg-cover bg-center-top inset-0 hidden xs:block'
+          style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/mobile_section1-2_bg.png'})`}}>
+        </div>
+        <div className='z-10 w-9/12 relative inset-0 mx-auto py-20'>
           <div className='flex items-end '>
-            <div className='w-2/5 mr-7'>
+            <div className='w-2/5 ml-7  pr-24'>
               <img src={process.env.PUBLIC_URL+'/images/section1_person2_title.png'} className="mb-8" alt="" />
               <div className='text-white text-base font-bold mb-5'>房子要賣得掉才有用，設計一個案子，不僅要注重美感，貼近市場與需求更是一大重點；由市場觀點來設計，以實用性為考量，才能達成最符合市場需求的產品內容。</div>
             </div>
