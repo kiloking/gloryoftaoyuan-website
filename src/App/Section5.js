@@ -5,6 +5,7 @@ function Section5({bgimg}) {
   const settings = {
     dots: true,
     arrows:0,
+    lazyLoad: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -27,7 +28,7 @@ function Section5({bgimg}) {
           <div className='w-1/2 bg-[#829a2aca] flex flex-col justify-center items-center px-20 py-4 box-border order-2 xs:w-full xs:px-10 xs:mb-10  xs:bg-transparent'>
             <img src={process.env.PUBLIC_URL+'/images/section5_title.png'} alt=""  className='w-4/5 xs:hidden'/>
             <img src={process.env.PUBLIC_URL+'/images/mobile_section5_subtitle.png'} alt=""  className='w-full hidden xs:block'/>
-            <div className='mt-10 leading-8 text-base'>
+            <div className='mt-8 leading-8 text-base text-justify'>
             萬壽路—「龜山正中心，生活正核心。」匯聚交通、商圈、行政、學區…，等精華區段，沿街商店、銀行、攤販匯聚，從萬壽路擴散出去，形成最豐富的生活聚落；時代更迭，繁華如昔，老桃園人才懂得傳承地段，未來捷運棕線行經，鐵道經濟再起，鄰里街廓即將煥然一新，發展出不一樣的都會風情。
             </div>
           </div>

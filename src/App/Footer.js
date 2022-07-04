@@ -1,6 +1,17 @@
 import React from 'react'
-
+import { useForm } from "react-hook-form";
+import axios from 'axios';
 function Footer() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    console.log(data)
+    axios.post('https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f', data)
+    .then(response => {
+      console.log(response);
+    })
+  };
+
+  //https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f
   return (
     <div
       className="header  relative" name="footer"
@@ -15,21 +26,21 @@ function Footer() {
             <img src={process.env.PUBLIC_URL+'/images/mobile_footer_title.png'} alt="" className='w-3/5 mb-5' />
             <img src={process.env.PUBLIC_URL+'/images/mobile_footer_subtitle.png'} alt="" className='w-full' />
           </div>
-          <form className='w-full flex flex-col justify-between ml-10 xs:ml-0 '>
+          <form className='w-full flex flex-col justify-between ml-10 xs:ml-0 ' onSubmit={handleSubmit(onSubmit)}>
               <div className='flex items-center mt-3'>
                 <div className='w-4/5 '>
                   <input type="text" className="
                   block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                px-5 py-3 " placeholder="姓名" />
+                px-5 py-3 " placeholder="姓名"   {...register("name", { required: true, maxLength: 20 })}/>
                 </div>
 
                 <div className="relative w-2/5 ml-1">
                   <select className="block appearance-none w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                px-5 py-3" id="grid-state">
-                    <option>先生</option>
-                    <option>小姐</option>
+                px-5 py-3" id="grid-state" {...register("gender")}>
+                    <option value="先生">先生</option>
+                    <option value="小姐">小姐</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -41,26 +52,27 @@ function Footer() {
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
-              " placeholder="行動電話" />
+              " placeholder="行動電話" {...register("tel", { required: true, maxLength: 20 })}/>
               <input type="email" className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
-              " placeholder="Email" />
+              " placeholder="Email" {...register("email", { required: true, maxLength: 20 })}/>
               <input type="date" className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
-              " placeholder="預約時間" />
+              " placeholder="預約時間" {...register("date", { required: true, maxLength: 20 })}/>
               <div className="md:flex md:items-center ">
          
                 <label className=" block text[#40210F] font-bold">
-                  <input className="mr-2 leading-tight" type="checkbox"/>
+                  <input className="mr-2 leading-tight" type="checkbox" defaultChecked/>
                   <span className="text-sm">
                     我同意將個人資料傳送給《百虹歡璽城》做為客戶管理與服務用途
                   </span>
                 </label>
               </div>
+              <button className=' rounded-md  bg-amber-800 text-center text-white p-2' type='submit'>送出表單</button>
           </form>
         </div>
         <div className='mt-10 xs:mx-auto'>

@@ -26,5 +26,7 @@ module.exports = {
       'body': ['"Microsoft JhengHei"']
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
