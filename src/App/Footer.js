@@ -1,13 +1,31 @@
-import React from 'react'
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react'
+import { useForm, reset } from "react-hook-form";
 import axios from 'axios';
 function Footer() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      name: "",
+      tel: "",
+      place: "",
+    }
+  });
+  const [formStatus , setFormStatus] = useState(false)
+  const sendFormStatusModal = ()=>{
+    setFormStatus(true)
+
+    setTimeout(()=>{
+      setFormStatus(false)
+    },5000)
+  }
   const onSubmit = data => {
     console.log(data)
     axios.post('https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f', data)
     .then(response => {
       console.log(response);
+      sendFormStatusModal()
+    })
+    .catch(err=>{
+      console.log(err)
     })
   };
 
@@ -17,6 +35,10 @@ function Footer() {
       className="header  relative" name="footer"
       style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/headerbg.png'})`}}
     > 
+    {formStatus && <div className={'fixed w-full  z-40 inset-0 transition-all '}onClick={()=>setFormStatus(false)}>
+      <div className={`w-3/5 mx-auto  rounded-md p-4 bg-[#000000b4] text-white text-xs top-[15%] relative transition-all duration-300 delay-1000   ${formStatus ? " opacity-100 blur-none " : "opacity-0 blur-lg "}`}>表單已送出。我們將盡快電話聯絡您，詢問並安排您方便的賞屋時間。如有任何問題，歡迎撥打接待專線03-319-1177直接聯繫我們，謝謝！</div>
+    
+    </div>}
       <div className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0 '
     style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/headerbg.png' })`}}></div>
       <div className='w-3/5 relative mx-auto  pt-32 xs:w-full xs:p-6'>
@@ -32,7 +54,7 @@ function Footer() {
                   <input type="text" className="
                   block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                px-5 py-3 " placeholder="姓名"   {...register("name", { required: true, maxLength: 20 })}/>
+                px-5 py-3 " placeholder="姓名"    {...register("name", { required: true, maxLength: 20 })}/>
                 </div>
 
                 <div className="relative w-2/5 ml-1">
@@ -42,9 +64,6 @@ function Footer() {
                     <option value="先生">先生</option>
                     <option value="小姐">小姐</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                  </div>
                 </div>
               </div>
 
@@ -53,16 +72,16 @@ function Footer() {
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
               " placeholder="行動電話" {...register("tel", { required: true, maxLength: 20 })}/>
-              <input type="email" className="
+              <input type="text" className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
-              " placeholder="Email" {...register("email", { required: true, maxLength: 20 })}/>
-              <input type="date" className="
+              " placeholder="居住地" {...register("place", {  maxLength: 20 })}/>
+              <input type="text" className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
-              " placeholder="預約時間" {...register("date", { required: true, maxLength: 20 })}/>
+              " placeholder="選擇日期 年/月/日" onFocus={(e) => e.target.type = 'date'}  onBlur={(e) => e.target.type = 'text'} {...register("date", { required: true, maxLength: 20 })}/>
               <div className="md:flex md:items-center ">
          
                 <label className=" block text[#40210F] font-bold">

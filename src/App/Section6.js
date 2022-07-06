@@ -12,7 +12,7 @@ function Section6({bgimg}) {
     slidesToScroll: 1
   };
   return (
-    <div id="section4" name="link4" className="header h-screen  relative bg-[#c0a33c]" >
+    <div id="section4" name="link4" className="header min-h-screen  relative bg-[#c0a33c]" >
       <div className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0 xs:hidden'
           style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/'+bgimg })`}}></div>
       <div 
@@ -27,8 +27,8 @@ function Section6({bgimg}) {
           <div className='w-1/2 bg-[#c0a33cbf] flex flex-col justify-center items-center px-20 py-4 box-border xs:w-full xs:px-10 xs:mb-10 xs:bg-transparent'>
             <img src={process.env.PUBLIC_URL+'/images/section6_title.png'} alt=""  className='w-4/5 xs:hidden'/>
             <img src={process.env.PUBLIC_URL+'/images/mobile_section6_subtitle.png'} alt=""  className='w-full hidden xs:block'/>
-            <div className='mt-8 leading-8 text-base text-justify'>
-            萬壽路—「龜山正中心，生活正核心。」匯聚交通、商圈、行政、學區…，等精華區段，沿街商店、銀行、攤販匯聚，從萬壽路擴散出去，形成最豐富的生活聚落；時代更迭，繁華如昔，老桃園人才懂得傳承地段，未來捷運棕線行經，鐵道經濟再起，鄰里街廓即將煥然一新，發展出不一樣的都會風情。
+            <div className='mt-8  text-base text-justify leading-7 xs:leading-normal'>
+            鄰近明星學區龜山國小僅1.2KM，桃園市立圖書館(龜山分館)亦在不遠處；在地人文豐厚，近擁公私立書香學區，龜山國中、桃園高中、銘傳大學，接軌國際教育，車程往返近距離。
             </div>
           </div>
           <div  className='w-1/2  h-full xs:w-full xs:order-2 '>
@@ -36,7 +36,7 @@ function Section6({bgimg}) {
               {
                 data.map((item,index)=>{
                   return(
-                    <div className='border-4 border-white-600 w-full pt-[69%] relative h-full xs:border-0'
+                    <div key={index} className='border-4 border-white-600 w-full pt-[69%] relative h-full xs:border-0'
                       
                     >
                       <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'

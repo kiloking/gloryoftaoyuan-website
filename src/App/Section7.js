@@ -20,25 +20,25 @@ function Section7({bgimg}) {
       </div>
       <div className='z-10 w-9/12 relative mx-auto py-24 xs:w-full'>
         <div className='flex  text-white justify-between items-stretch xs:flex-col'>
-          <div className='w-1/2 px-10 mr-10  flex flex-col justify-center items-center xs:w-full xs:px-10 xs:mb-10'>
-            <div className='  py-4 box-border xs:order-2 '>
+          <div className='w-1/2 px-10 mr-10  flex flex-col justify-center items-center xs:w-full xs:px-0 xs:mb-5'>
+            <div className='  py-4 box-border xs:order-2 xs:px-8 '>
               <img src={process.env.PUBLIC_URL+'/images/section7_title.png'} alt="" className='xs:hidden'/>
               <img src={process.env.PUBLIC_URL+'/images/mobile_section7_subtitle.png'} alt="" className='  hidden xs:block'/>
-              <div className='mt-8 leading-8 text-base mb-10 text-justify'>
+              <div className='mt-8  text-base mb-10 text-justify xs:mb-0'>
                 VIP公設休閒，簡單時尚雍容大度；精選羽球場、健身房、兒童遊戲室、韻律教室、閱讀室、多功能教室、球藝室、棋藝室、ktv、宴會廳…等十大公設，打造最好的共享空間，禮遇生活，沉澱煩悶，讓下班後的時間，有另一種選擇。
               </div>
               <img src={process.env.PUBLIC_URL+'/images/'} alt="" />
             </div>
-            <div  className='w-full  h-full xs:w-full xs:order-1 '>
+            <div  className='w-full  h-full xs:w-full xs:order-1 xs:mb-5'>
               <Slider {...settings} >
                 {
                   data.map((item,index)=>{
                     return(
-                      <div className='border-4 border-white-600 w-full pt-[69%] relative h-full xs:border-0'
+                      <div key={index} className='border-4 border-white-600 w-full pt-[69%] relative h-full xs:border-0'
                         
                       >
                         <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'
-                            style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section5/'+item})`}}
+                            style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section7/'+item})`}}
                           ></div>
                       </div>
                     )
@@ -49,9 +49,9 @@ function Section7({bgimg}) {
   
           
           </div>        
-          <div className='w-1/2 px-10 flex flex-col  items-center xs:w-full'>
+          <div className='w-1/2 px-10 xs:px-8 flex flex-col  items-center xs:w-full'>
             <img src={process.env.PUBLIC_URL+'/images/section7_design.png'} alt="" className='mb-10'/>
-            <img src={process.env.PUBLIC_URL+'/images/section7_designlist.png'} alt="" className='w-4/5 xs:w-full'  />
+            <img src={process.env.PUBLIC_URL+'/images/section7_designlist.png'} alt="" className='w-4/5 xs:w-4/5'  />
           </div>
         </div>
       </div>

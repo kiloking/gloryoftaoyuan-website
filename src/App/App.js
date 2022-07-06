@@ -73,14 +73,7 @@ function App() {
           <Section6 bgimg={'section6_bg.png'}/>
           <Section7 bgimg={'section7_bg.png'}/>
           <Footer />
-          {showModal && (
-            <Modal
-              src="https://source.unsplash.com/NQSWvyVRIJk/800x599"
-              alt="snow"
-              caption="caption"
-              onClose={() => setIsOpen(false)}
-            />
-          )}
+
         
         
       </div>
