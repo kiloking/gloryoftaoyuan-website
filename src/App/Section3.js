@@ -2,7 +2,7 @@ import React from 'react'
 
 function Section3() {
   return (
-    <div id="section3"  className="header min-h-screen relative bg-[#3BADE4]"
+    <div id="section3"  className="header min-h-screen relative bg-[#3BADE4] xs:min-h-min"
  >
       <div className=' absolute inset-0 bg-no-repeat bg-cover bg-center xs:hidden'
         style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section3_bg.png'})`}}>
@@ -20,7 +20,7 @@ function Section3() {
           </div>
         </div>
       </div>
-      <div className='w-4/5 mx-auto my-10 hidden xs:block'>
+      <div className='w-4/5 mx-auto py-10 hidden xs:block'>
         <img src={process.env.PUBLIC_URL+'/images/mobile_section3_subtitle.png'} alt="" className='w-full' />
         <div className='text-white text-base drop-shadow-lg mt-8 text-justify'>桃園龜山多年等待！致敬在地精英。「巨蛋生活圈」珍稀都心重劃區，擁站前、中興路、萬壽路三大商圈機能，未來捷運棕線BRH2巨蛋站僅600公尺之遙，火車站、雙國道完善聯外路網；桃林鐵路步道僅600公尺、近鄰三民公園、虎頭山萬頃森林，周邊生活機能成熟，朗闊大境視野無限，胸懷大景生活從容。</div>
       </div>
