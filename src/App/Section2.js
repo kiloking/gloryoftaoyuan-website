@@ -1,7 +1,38 @@
 import React from 'react'
 import Slider from "react-slick";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 function Section2() {
   const data = ['p01.jpg','p02.jpg','p03.jpg','p04.jpg','p05.jpg']
+  const SamplePrevArrow = (props) => {
+      const { className, onClick } = props
+      return (
+          <div 
+              className={className}
+              onClick={onClick}
+          >
+              <FaAngleLeft
+                  color="#fff"
+                  size={70}
+              />
+          </div>
+      );
+  }
+  const SampleNextArrow = (props) => {
+      const { className, onClick } = props
+      return (
+          <div 
+              className={className}
+              onClick={onClick}
+          >
+              <FaAngleRight
+                  color="#fff"
+                  size={70}
+              />
+          </div>
+      );
+  }
+  
+
   const settings = {
     dots: true,
     arrows:0,
@@ -11,11 +42,41 @@ function Section2() {
     slidesToShow: 1,
     slidesToScroll: 1
   }
+  const settings2 = {
+    dots: true,
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />
+
+  }
   return (
     <div id="section2" name="link2" className="header min-h-screen  relative bg-[#3BADE4] xs:min-h-min" > 
-      <div className=' absolute inset-0 bg-no-repeat bg-cover bg-center xs:hidden'
-        style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2_bg.png'})`}}>
+      <div className=' absolute top-0 bottom-0 right-0 bg-no-repeat bg-contain bg-right xs:hidden h-full  w-60 z-20'
+        style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2/section2_side_title.png'})`}}>
       </div>
+      <div className='  absolute inset-0  '>
+        <Slider {...settings2} >
+          {
+            data.map((item,index)=>{
+              return(
+                <div key={index} className='w-full h-screen relative xs:border-0'
+                  
+                >
+                  <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-bottom'
+                      style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2/pc_'+item})`}}
+                    ></div>
+                </div>
+              )
+            })
+          }
+        </Slider>
+      </div>
+
       <div className=' relative ml-5 hidden xs:block'>
         <img src={process.env.PUBLIC_URL+'/images/mobile_section2_title.png'} alt="" />
       </div>
