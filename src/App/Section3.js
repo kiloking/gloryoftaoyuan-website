@@ -2,10 +2,12 @@ import React from 'react'
 
 function Section3() {
   return (
-    <div id="section3"  className="header min-h-screen relative bg-[#3BADE4] xs:min-h-min"
- >
+    <div id="section3"  className="header min-h-screen relative bg-[#3BADE4] xs:min-h-min" >
+      <div className=' absolute top-0 bottom-0 left-0 bg-no-repeat bg-contain bg-left xs:hidden h-full  w-60 z-20'
+        style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section3/section3_side_title.png'})`}}>
+      </div>
       <div className=' absolute inset-0 bg-no-repeat bg-cover bg-center xs:hidden'
-        style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section3_bg.png'})`}}>
+        style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section3/section3_bg.jpg'})`}}>
       </div>
       <div className=' absolute top-0 left-0 ml-5 hidden xs:block z-10'>
         <img src={process.env.PUBLIC_URL+'/images/mobile_section3_title.png'} alt="" />

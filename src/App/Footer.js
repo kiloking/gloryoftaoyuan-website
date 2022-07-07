@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useForm, reset } from "react-hook-form";
 import axios from 'axios';
+import { MdClear } from "react-icons/md";
+
 function Footer() {
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -45,7 +47,10 @@ function Footer() {
       style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/headerbg.png'})`}}
     > 
     {formStatus && <div className={'fixed w-full  z-40 inset-0 transition-all '}onClick={()=>setFormStatus(false)}>
-      <div className={`w-3/5 mx-auto  rounded-md p-4 bg-[#000000b4] text-white text-xs top-[15%] relative transition-all duration-300 delay-1000   ${formStatus ? " opacity-100 blur-none " : "opacity-0 blur-lg "}`}>表單已送出。我們將盡快電話聯絡您，詢問並安排您方便的賞屋時間。如有任何問題，歡迎撥打接待專線03-319-1177直接聯繫我們，謝謝！</div>
+      <div className={`w-3/5 mx-auto  rounded-md p-4 bg-[#000000b4] text-white text-xs top-[15%] relative transition-all duration-300 delay-1000   ${formStatus ? " opacity-100 blur-none " : "opacity-0 blur-lg "}`}>
+      表單已送出。我們將盡快電話聯絡您，詢問並安排您方便的賞屋時間。如有任何問題，歡迎撥打接待專線03-319-1177直接聯繫我們，謝謝！
+      <div className='  absolute -top-2 -right-2 p-1 bg-black rounded-full cursor-pointer '><MdClear /></div>
+      </div>
     
     </div>}
       <div className='absolute pt-[56%] bg-no-repeat bg-cover bg-right-top inset-0 '

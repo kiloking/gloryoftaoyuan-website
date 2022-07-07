@@ -59,7 +59,7 @@ function Section2() {
       <div className=' absolute top-0 bottom-0 right-0 bg-no-repeat bg-contain bg-right xs:hidden h-full  w-60 z-20'
         style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2/section2_side_title.png'})`}}>
       </div>
-      <div className='  absolute inset-0  '>
+      <div className='  absolute inset-0 xs:hidden '>
         <Slider {...settings2} >
           {
             data.map((item,index)=>{
