@@ -10,6 +10,7 @@ function Footer() {
     }
   });
   const [formStatus , setFormStatus] = useState(false)
+  const [ labelDisplay , setLabelDispaly] = useState(true)
   const sendFormStatusModal = ()=>{
     setFormStatus(true)
 
@@ -28,6 +29,14 @@ function Footer() {
       console.log(err)
     })
   };
+  const handleChange=(e)=>{
+    console.log(e.target.value,'change')
+    if(e.target.value){
+      setLabelDispaly(false)
+    }else{
+      setLabelDispaly(true)
+    }
+  }
 
   //https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f
   return (
@@ -77,11 +86,15 @@ function Footer() {
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                 px-5 py-3
               " placeholder="居住地" {...register("place", {  maxLength: 20 })}/>
-              <input type="text" className="
+              <div className=' relative '>
+                {labelDisplay && <label htmlFor="date" className=' absolute top-0 p-4 text-zinc-500 hidden xs:block '>選擇日期 年/月/日</label>}
+                <input type="date" name='date' className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                px-5 py-3
-              " placeholder="選擇日期 年/月/日" onFocus={(e) => e.target.type = 'date'}  onBlur={(e) => e.target.type = 'text'} {...register("date", { required: true, maxLength: 20 })}/>
+                px-5 py-3 "  {...register("date", { required: true, maxLength: 20 })} onChange={(e)=>handleChange(e)}/>
+
+              </div>
+
               <div className="md:flex md:items-center ">
          
                 <label className=" block text[#40210F] font-bold">
