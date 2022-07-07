@@ -87,7 +87,7 @@ function Footer() {
                 px-5 py-3
               " placeholder="居住地" {...register("place", {  maxLength: 20 })}/>
               <div className=' relative '>
-                {labelDisplay && <label htmlFor="date" className=' absolute top-0 p-4 text-zinc-500 hidden xs:block '>選擇日期 年/月/日</label>}
+                {labelDisplay && <label htmlFor="date" className=' absolute top-0 p-4 text-zinc-500 hidden xs:block pointer-events-none'>選擇日期 年/月/日</label>}
                 <input type="date" name='date' className="
                 mt-1  block  w-full  rounded-md   border-gray-300   shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
