@@ -27,7 +27,7 @@ function Section1() {
           className='absolute pt-[0%] bg-no-repeat bg-cover bg-bottom  top-0 right-0 hidden xs:block w-full aspect-square '
           style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section1_person/mobile_p1.png'})`}}>
         </div>
-        <div className='z-10 w-3/4 xs:w-full xs:mt-14 xs:mb-14'>
+        <div className='z-10 w-3/4 xs:w-full xs:mt-32 xs:mb-14'>
           <div className='flex items-end '>
             <img src={process.env.PUBLIC_URL+'/images/section1_person1.png'} alt="" className='xs:hidden' />
             <div className='ml-12 pr-32 xs:pr-0 xs:mr-12'>
@@ -97,7 +97,7 @@ function Section1() {
                 {
                   data2.map((item,index)=>{
                     return(
-                      <div key={index} className=' box-border pt-[56%] relative'
+                      <div key={index} className=' box-border h-[35vh] relative'
                         
                       >
                         <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'
@@ -142,7 +142,7 @@ function Section1() {
                   {
                     data3.map((item,index)=>{
                       return(
-                        <div key={index} className=' box-border pt-[56%] relative'
+                        <div key={index} className=' box-border h-[35vh] relative'
                           
                         >
                           <div className=' absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center'

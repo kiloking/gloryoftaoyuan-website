@@ -46,7 +46,7 @@ function App() {
       <div className="App">
           <div className='  fixed bottom-0 left-0  hidden xs:block w-full z-40'>
             <div className='flex text-white justify-between '>
-              <a href="tel:0000000" className='flex flex-col items-center p-5 bg-[#42210bd0] mr-1 flex-1'>
+              <a href="tel:033191177" className='flex flex-col items-center p-5 bg-[#42210bd0] mr-1 flex-1'>
                 <img src={process.env.PUBLIC_URL+'/images/phone.png'} alt="" />
                 <div>立即來電</div>
               </a>
@@ -55,7 +55,7 @@ function App() {
                 <img src={process.env.PUBLIC_URL+'/images/pen.png'} alt="" />
                 <div>立即預約</div>
               </Link>
-              <a href="https://www.facebook.com/" target="_blank" className='flex flex-col items-center p-5 bg-[#42210bd0] flex-1' rel="noreferrer">
+              <a href="https://www.facebook.com/%E7%99%BE%E8%99%B9%E6%AD%A1%E7%92%BD%E5%9F%8E-100762649258367" target="_blank" className='flex flex-col items-center p-5 bg-[#42210bd0] flex-1' rel="noreferrer">
                 <img src={process.env.PUBLIC_URL+'/images/fb.png'} alt="" />
                 <div>粉絲專頁</div>
               </a>
