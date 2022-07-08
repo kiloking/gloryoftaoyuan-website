@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 function Section2() {
-  const data = ['p01.jpg','p02.jpg','p03.jpg','p04.jpg','p05.jpg']
+  const data = ['p03.jpg','p01.jpg','p02.jpg','p04.jpg','p05.jpg']
   const SamplePrevArrow = (props) => {
       const { className, onClick } = props
       return (
@@ -60,7 +60,7 @@ function Section2() {
         style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section2/section2_side_title.png'})`}}>
       </div>
       <div className='  absolute inset-0 xs:hidden '>
-        <Slider {...settings2} >
+        <Slider {...settings2} className="section2_slider">
           {
             data.map((item,index)=>{
               return(

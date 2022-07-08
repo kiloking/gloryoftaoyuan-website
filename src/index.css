@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.section2_slider  .slick-dots{
+  bottom:5%; 
+}
 .slick-dots {
   bottom:90%;
   
