@@ -20,9 +20,11 @@ function Footer() {
       setFormStatus(false)
     },5000)
   }
+  //Main: https://sheet.best/api/sheets/b6059729-a36d-40c1-8fcb-8e8f75e4fdd7
+  //TEST: https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f
   const onSubmit = data => {
     console.log(data)
-    axios.post('https://sheet.best/api/sheets/c045db18-f183-40d4-8e7f-ac7f53cb603f', data)
+    axios.post('https://sheet.best/api/sheets/b6059729-a36d-40c1-8fcb-8e8f75e4fdd7', data)
     .then(response => {
       console.log(response);
       sendFormStatusModal()
