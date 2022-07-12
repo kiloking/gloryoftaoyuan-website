@@ -103,7 +103,7 @@ function Footer() {
               <div className="md:flex md:items-center ">
          
                 <label className=" block text[#40210F] font-bold">
-                  <input className="mr-2 leading-tight" type="checkbox" defaultChecked/>
+                  <input className="mr-2 leading-tight" type="checkbox" defaultChecked {...register("checkbox")}/>
                   <span className="text-sm">
                     我同意將個人資料傳送給《百虹歡璽城》做為客戶管理與服務用途
                   </span>
